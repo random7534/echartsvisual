@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>美国</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- 制作顶部 -->
+      <a href="../../地图.html" title="点击此处返回地图"><h1>美国</h1></a>
+      <div class="showTime">当前时间：2020年3月17-0时54分14秒</div>
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //开始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    </header>
+    <!-- 页面板块设计-->
+    <section class="mainbox">
+      <div class="column">
+        <div class="panel bar">
+          <!-- 盒子设置 -->
+          <h2>
+            每月商品出口总额（百万美元）
+          </h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+          <h2>商品出口量指数（不经季节调整）</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+
+      </div>
+      <div class="column">
+        <div class="panel bar1">
+          <h2>商业部门按主要服务分列进口（亿美元）</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line1">
+          <h2>主要部门商业服务进口预估数（百亿美元）</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+       
+      </div>
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
